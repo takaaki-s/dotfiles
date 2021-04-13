@@ -131,15 +131,15 @@ endfun
 
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
-nmap fb :Buffers<CR>
-nmap fo :call FzfOmniFiles()<CR>
-nmap ff :Lines<CR>
+nnoremap <leader>o :call FzfOmniFiles()<CR>
+nnoremap <leader>f :BLines<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>F :Lines<CR>
+nnoremap <leader>g :Rg<Space>
 
 
-nnoremap <C-b> :Buffers<CR>
 nnoremap <C-g> :Rg<Space>
 nnoremap <leader><leader> :Commands<CR>
-nnoremap <C-p> :call FzfOmniFiles()<CR>
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gd <Plug>(coc-definition)
