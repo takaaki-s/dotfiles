@@ -1,11 +1,4 @@
 set -x HISTCONTROL erasedups
-set -g fish_prompt_pwd_dir_length 0
-set -g theme_newline_cursor yes
-set -g theme_display_vi yse
-set -g theme_display_git no
-
-set -g theme_date_format "+%Y/%m/%d %H:%M:%S"
-set -g theme_powerline_fonts no
 
 abbr g git
 abbr gb "git branch"
