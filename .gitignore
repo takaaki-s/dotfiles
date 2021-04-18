@@ -9,6 +9,8 @@
 !/.config/nvim/init.vim
 
 !/.tmux.conf
+!/.zshrc
+!/.zsh/**/*
 !/.vimrc
 !/.peco/config.json
 
