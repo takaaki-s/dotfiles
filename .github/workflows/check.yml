@@ -8,7 +8,7 @@ jobs:
     container: ubuntu:latest
     steps:
       - uses: actions/checkout@v1
-      - name: Install require packages
+      - name: Install required packages
         run: apt-get update && apt-get install -y git sudo
       - name: Install dotfiles
         run: .bin/install.sh install
@@ -23,7 +23,7 @@ jobs:
         run: apt-get update
       - name: Install packages for install repository
         run: apt-get install -y git sudo software-properties-common
-      - name: Install reuired repository
+      - name: Install required repository
         run: apt-add-repository "deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted universe"
       - name: Install required packages
         run: apt-get update; apt-get install -y shellcheck
