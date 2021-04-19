@@ -1,3 +1,4 @@
+[![CI](https://github.com/takaaki-s/dotfiles/actions/workflows/check.yml/badge.svg)](https://github.com/takaaki-s/dotfiles/actions/workflows/check.yml)
 # インストールしておくもの
 
 fish shell
