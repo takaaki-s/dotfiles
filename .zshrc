@@ -40,8 +40,9 @@ zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"; zinit light shar
 # fd
 zinit ice as"program" from"gh-r" mv"fd* -> fd" pick"fd/fd"; zinit light sharkdp/fd
 
-zinit ice blockf; zinit light zsh-users/zsh-completions
-autoload -Uz compinit && compinit -u
+zinit wait lucid atload"zicompinit; zicdreplay" blockf for \
+    zsh-users/zsh-completions
+
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*:default' menu select=1
 
