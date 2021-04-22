@@ -71,10 +71,9 @@ autoload -Uz colors; colors
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' list-colors "${(s.:.)LSCOLORS}"
 
-
-source .zsh/rc/alias.zsh
-source .zsh/rc/config.zsh
-source .zsh/rc/function.zsh
+source $HOME/.zsh/rc/alias.zsh
+source $HOME/.zsh/rc/config.zsh
+source $HOME/.zsh/rc/function.zsh
 
 [ -f ~/.zsh_local ] && source ~/.zsh_local
 
