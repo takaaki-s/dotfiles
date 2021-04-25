@@ -113,6 +113,8 @@ call denite#custom#option('default', s:denite_default_options)
 
 let mapleader = "\<Space>"
 
+let NERDTreeShowHidden=1
+
 nmap <silent> bn <Plug>AirlineSelectPrevTab
 nmap <silent> bp <Plug>AirlineSelectNextTab
 nmap <silent> <Esc><Esc> :<C-u>noh<CR><Esc>
