@@ -2,6 +2,7 @@ abbrev-alias ll="exa -l"
 abbrev-alias la="exa -la"
 abbrev-alias lt="exa -l -T"
 
+abbrev-alias g="git"
 abbrev-alias gb="git branch"
 abbrev-alias gs="git status"
 abbrev-alias gf="git fetch"
