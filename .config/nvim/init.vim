@@ -15,7 +15,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'leafgarland/typescript-vim'
-"Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 "Plug 'nathanaelkane/vim-indent-guides'
 
 if has('nvim')
@@ -69,7 +69,7 @@ set smartcase
 set hlsearch
 
 " 不可視文字を可視化(タブが「▸-」と表示される)
-set list listchars=tab:\▸\-,trail:-,eol:↲
+"set list listchars=tab:\▸\-,trail:-,eol:↲
 " カーソルの左右移動で行末から次の行の行頭への移動が可能になる
 set whichwrap=b,s,h,l,<,>,[,],~
 
