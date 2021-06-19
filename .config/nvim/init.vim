@@ -17,6 +17,7 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'leafgarland/typescript-vim'
 Plug 'Yggdroot/indentLine'
 "Plug 'nathanaelkane/vim-indent-guides'
+Plug 'dominikduda/vim_current_word'
 
 if has('nvim')
   Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -32,6 +33,12 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 0
 
 let g:airline_theme = 'dark'
+
+if has("autocmd")
+  filetype plugin on
+  filetype indent on
+  autocmd FileType yaml setlocal et ts=2 sts=-1 sw=0
+endif
 
 " true color表示設定
 set termguicolors
@@ -78,6 +85,7 @@ set cursorline
 
 set wildmenu wildmode=list:full
 
+set inccommand=split
 
 " Define mappings
 autocmd FileType denite call s:denite_my_settings()
@@ -157,4 +165,6 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+inoremap <silent> jj <ESC>
 

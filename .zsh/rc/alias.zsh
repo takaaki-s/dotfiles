@@ -21,5 +21,7 @@ abbrev-alias bi="bundle install --path vendor/bundle -j4"
 abbrev-alias rc="bundle ex rails c"
 
 #マージ済みのブランチを削除する
-abbrev-alias gmdelete "git branch --merged|egrep -v \'\*|develop|master\'|xargs git branch -d"
+abbrev-alias gmdelete="git branch --merged|egrep -v \'\*|develop|master\'|xargs git branch -d"
+
+abbrev-alias k="kubectl"
 
