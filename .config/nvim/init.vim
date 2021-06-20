@@ -59,6 +59,8 @@ highlight EndOfBuffer ctermbg=NONE guibg=NONE
 " highlight Visual ctermbg=244
 " highlight Visual guibg=244
 
+hi CurrentWordTwins guibg=#00405A
+
 set ttimeoutlen=50
 set clipboard+=unnamed
 set hidden
@@ -74,6 +76,9 @@ set ignorecase
 set smartcase
 " 検索結果をハイライト"
 set hlsearch
+
+" 行を折り返さない
+set nowrap
 
 " 不可視文字を可視化(タブが「▸-」と表示される)
 "set list listchars=tab:\▸\-,trail:-,eol:↲
