@@ -57,9 +57,11 @@ highlight EndOfBuffer ctermbg=NONE guibg=NONE
 "hi Comment ctermfg=Gray
 "hi Comment guifg=Gray
 " highlight Visual ctermbg=244
-" highlight Visual guibg=244
+hi Visual guibg=#A04000
 
 hi CurrentWordTwins guibg=#00405A
+autocmd BufAdd NERD_tree_*,*FZF* :let b:vim_current_word_disabled_in_this_buffer = 1
+
 
 set ttimeoutlen=50
 set clipboard+=unnamed
@@ -144,7 +146,7 @@ fun! FzfOmniFiles()
   endif
 endfun
 
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+"let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
 nnoremap <leader>o :call FzfOmniFiles()<CR>
 nnoremap <leader>f :BLines<CR>
