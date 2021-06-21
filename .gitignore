@@ -9,6 +9,7 @@
 !/.config/fish/conf.d/myfunc.fish
 
 !/.config/nvim/init.vim
+!/.config/alacritty/alacritty.yml
 
 !/.tmux.conf
 !/.zshrc
