@@ -1,5 +1,5 @@
-abbrev-alias ll="exa -l"
-abbrev-alias la="exa -la"
+abbrev-alias ll="exa -lgh --time-style long-iso"
+abbrev-alias la="exa -lagh --time-style long-iso"
 abbrev-alias lt="exa -l -T"
 
 abbrev-alias g="git"
