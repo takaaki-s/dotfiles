@@ -57,7 +57,8 @@ highlight EndOfBuffer ctermbg=NONE guibg=NONE
 "hi Comment guifg=Gray
 " highlight Visual ctermbg=244
 hi Visual guibg=#A04000
-hi CocHighlightText guibg=#00405A
+hi CocHighlightText guibg=#00506A
+hi CursorLine guibg=#00304A
 
 set ttimeoutlen=50
 set clipboard+=unnamed
@@ -151,7 +152,6 @@ nnoremap <leader>F :Lines<CR>
 nnoremap <leader>g :Rg<Space>
 
 
-nnoremap <C-g> :Rg<Space>
 nnoremap <leader><leader> :Commands<CR>
 
 " coc setting
@@ -208,6 +208,16 @@ endfunction
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 inoremap <silent> jj <ESC>
 
