@@ -17,6 +17,11 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'leafgarland/typescript-vim'
 Plug 'Yggdroot/indentLine'
 "Plug 'nathanaelkane/vim-indent-guides'
+Plug 'tversteeg/registers.nvim', { 'branch': 'main' }
+
+if has('nvim-0.5')
+  Plug 'folke/which-key.nvim', { 'branch': 'main' }
+endif
 
 if has('nvim')
   Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -143,7 +148,7 @@ fun! FzfOmniFiles()
   endif
 endfun
 
-"let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+let g:fzf_layout = { 'down': '~40%' }
 
 nnoremap <leader>o :call FzfOmniFiles()<CR>
 nnoremap <leader>f :BLines<CR>
