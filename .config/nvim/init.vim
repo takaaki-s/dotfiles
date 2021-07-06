@@ -17,13 +17,13 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'leafgarland/typescript-vim'
 Plug 'Yggdroot/indentLine'
 "Plug 'nathanaelkane/vim-indent-guides'
-Plug 'tversteeg/registers.nvim', { 'branch': 'main' }
 
 if has('nvim-0.5')
   Plug 'folke/which-key.nvim', { 'branch': 'main' }
 endif
 
 if has('nvim')
+  Plug 'tversteeg/registers.nvim', { 'branch': 'main' }
   Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 else
   Plug 'Shougo/denite.nvim'
@@ -140,12 +140,13 @@ tnoremap <silent> <ESC> <C-\><C-n>
 
 " FZF
 fun! FzfOmniFiles()
-  let is_git = system('git status')
-  if v:shell_error
-    :Files
-  else
-    :GitFiles
-  endif
+  :Files
+"  let is_git = system('git status')
+"  if v:shell_error
+"    :Files
+"  else
+"    :GitFiles
+"  endif
 endfun
 
 let g:fzf_layout = { 'down': '~40%' }
