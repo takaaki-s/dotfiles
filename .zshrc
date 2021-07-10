@@ -41,6 +41,9 @@ zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"; zinit light shar
 # fd
 zinit ice as"program" from"gh-r" mv"fd* -> fd" pick"fd/fd"; zinit light sharkdp/fd
 
+# delta
+zinit ice as"program" from"gh-r" mv"delta* -> delta" pick"delta/delta"; zinit light dandavison/delta
+
 zinit wait lucid atload"zicompinit; zicdreplay" blockf for \
     zsh-users/zsh-completions
 
