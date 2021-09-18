@@ -18,6 +18,10 @@
 !/.vimrc
 !/.peco/config.json
 
+!/docker/*
+!/docker-compose.yml
+!/Makefile
+
 !/.gitignore
 
 .DS_Store

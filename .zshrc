@@ -41,9 +41,6 @@ zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"; zinit light shar
 # fd
 zinit ice as"program" from"gh-r" mv"fd* -> fd" pick"fd/fd"; zinit light sharkdp/fd
 
-# delta
-zinit ice as"program" from"gh-r" mv"delta* -> delta" pick"delta/delta"; zinit light dandavison/delta
-
 zinit wait lucid atload"zicompinit; zicdreplay" blockf for \
     zsh-users/zsh-completions
 
@@ -66,9 +63,6 @@ setopt hist_ignore_space
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-#export LS_COLORS=gxfxcxdxbxegedabagacad
 export LSCOLORS=gxfxcxdxbxegedabagacad
 autoload -Uz colors; colors
 zstyle ':completion:*' verbose yes
@@ -80,3 +74,5 @@ source $HOME/.zsh/rc/function.zsh
 
 [ -f ~/.zsh_local ] && source ~/.zsh_local
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
