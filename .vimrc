@@ -4,7 +4,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'bronson/vim-trailing-whitespace'
-"Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tomasr/molokai'
@@ -14,24 +13,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'leafgarland/typescript-vim'
-"Plug 'Yggdroot/indentLine'
-"Plug 'nathanaelkane/vim-indent-guides'
 
-if has('nvim')
-  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/denite.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
-"if has('nvim')
-"  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"else
-"  Plug 'Shougo/deoplete.nvim'
-"  Plug 'roxma/nvim-yarp'
-"  Plug 'roxma/vim-hug-neovim-rpc'
-"endif
 
 call plug#end()
 
@@ -89,36 +71,6 @@ set wildmenu wildmode=list:full
 
 
 " Define mappings
-autocmd FileType denite call s:denite_my_settings()
-function! s:denite_my_settings() abort
-  nnoremap <silent><buffer><expr> <CR>
-  \ denite#do_map('do_action')
-  nnoremap <silent><buffer><expr> d
-  \ denite#do_map('do_action', 'delete')
-  nnoremap <silent><buffer><expr> p
-  \ denite#do_map('do_action', 'preview')
-  nnoremap <silent><buffer><expr> q
-  \ denite#do_map('quit')
-  nnoremap <silent><buffer><expr> i
-  \ denite#do_map('open_filter_buffer')
-  nnoremap <silent><buffer><expr> <Space>
-  \ denite#do_map('toggle_select').'j'
-endfunction
-
-" Change default action. use floating
-let s:denite_win_width_percent = 0.85
-let s:denite_win_height_percent = 0.7
-let s:denite_default_options = {
-    \ 'split': 'floating',
-    \ 'winwidth': float2nr(&columns * s:denite_win_width_percent),
-    \ 'wincol': float2nr((&columns - (&columns * s:denite_win_width_percent)) / 2),
-    \ 'winheight': float2nr(&lines * s:denite_win_height_percent),
-    \ 'winrow': float2nr((&lines - (&lines * s:denite_win_height_percent)) / 2),
-    \ 'highlight_filter_background': 'DeniteFilter',
-    \ 'prompt': '$ ',
-    \ 'start_filter': v:true,
-    \ }
-call denite#custom#option('default', s:denite_default_options)
 
 nmap <silent> bn <Plug>AirlineSelectPrevTab
 nmap <silent> bp <Plug>AirlineSelectNextTab
