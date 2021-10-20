@@ -39,6 +39,9 @@ zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"; zinit light shar
 # fd
 zinit ice as"program" from"gh-r" mv"fd* -> fd" pick"fd/fd"; zinit light sharkdp/fd
 
+zinit ice from"gh-r" as"program" bpick"tig-*.tar.gz" atclone"cd tig-*/; ./configure; make" atpull"%atclone" pick"*/src/tig"
+zinit light "jonas/tig"
+
 zinit wait lucid for \
  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
     zdharma/fast-syntax-highlighting \
