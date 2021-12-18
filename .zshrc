@@ -5,19 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-### Added by Zinit's installer
-if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    if [[ $(command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin") -eq 0 ]];
-    then
-      print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b"
-    else
-      print -P "%F{160}▓▒░ The clone has failed.%f%b"
-    fi
-fi
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+source "${ZINIT_HOME}/zinit.zsh"
 
-source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit's installer chunk
@@ -40,15 +30,11 @@ zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"; zinit light shar
 zinit ice as"program" from"gh-r" mv"fd* -> fd" pick"fd/fd"; zinit light sharkdp/fd
 
 # jq
-zinit ice as"program" from"gh-r" mv"jq* -> jq" pick"fd/fd"; zinit light stedolan/jq
+zinit ice as"program" from"gh-r" mv"jq* -> jq" pick"jq"; zinit light stedolan/jq
 
-zinit ice from"gh-r" as"program" bpick"tig-*.tar.gz" atclone"cd tig-*/; ./configure; make" atpull"%atclone" pick"*/src/tig"
-zinit light "jonas/tig"
 zinit light reegnz/jq-zsh-plugin
 
 zinit wait lucid for \
- atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
-    zdharma/fast-syntax-highlighting \
  blockf \
     zsh-users/zsh-completions \
  atload"!_zsh_autosuggest_start" \

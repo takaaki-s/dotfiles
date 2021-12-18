@@ -5,6 +5,7 @@ EXCLUSIONS := .DS_Store .git .gitignore .github .bin
 CANDIDATES := $(wildcard .??*)
 DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 DOTPATH    := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
+ZINIT_HOME := "$(HOME)/.local/share/zinit/zinit.git"
 
 .PHONY: all dep install fzf vimplug
 
@@ -27,6 +28,9 @@ else
 	@exit 1
 endif
 endif
+	mkdir -p $(ZINIT_HOME)
+	git clone https://github.com/zdharma-continuum/zinit.git $(ZINIT_HOME)
+
 
 install:
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
