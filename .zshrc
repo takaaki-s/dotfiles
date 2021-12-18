@@ -35,6 +35,8 @@ zinit ice as"program" from"gh-r" mv"jq* -> jq" pick"jq"; zinit light stedolan/jq
 zinit light reegnz/jq-zsh-plugin
 
 zinit wait lucid for \
+ silent atinit"ZINIT[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" \
+    zdharma-continuum/fast-syntax-highlighting \
  blockf \
     zsh-users/zsh-completions \
  atload"!_zsh_autosuggest_start" \
