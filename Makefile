@@ -22,15 +22,12 @@ ifeq ($(OS),Darwin)
 else
 ifeq ($(OS),Linux)
 	sudo apt-get update
-	sudo apt-get install -y git curl zsh unzip
+	sudo apt-get install -y git curl zsh unzip gcc automake libncurses-dev pkg-config bison
 else
 	@echo 'not supported platform'
 	@exit 1
 endif
 endif
-	mkdir -p $(ZINIT_HOME)
-	git clone https://github.com/zdharma-continuum/zinit.git $(ZINIT_HOME)
-
 
 install:
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
@@ -38,10 +35,13 @@ install:
 clean: ## Remove the dot files and this repo
 	@-$(foreach val, $(DOTFILES), rm -vrf $(HOME)/$(val);)
 
-fzf:
-	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-	~/.fzf/install
+# fzf:
+# 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+# 	~/.fzf/install
 
 vimplug:
 	sh -c 'curl -fLo "$(XDG_DATA_HOME)"/nvim/site/autoload/plug.vim --create-dirs \
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+tmuxpluginmanager:
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

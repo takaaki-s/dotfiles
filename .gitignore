@@ -17,6 +17,7 @@
 !/.zsh/**/*
 !/.vimrc
 !/.peco/config.json
+!/.tool-versions
 
 !/docker/*
 !/docker-compose.yml
