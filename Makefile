@@ -13,6 +13,8 @@ help:
 	@echo 'dep      依存関係のライブラリ等をインストールします'
 	@echo 'install  dotfilesを配置します'
 	@echo 'all      すべてを実行します'
+	@echo 'vimplug'
+	@echo 'tmuxpluginmanager'
 
 all: dep install
 

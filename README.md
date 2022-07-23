@@ -21,6 +21,7 @@ zsh
 # 必要に応じて
 
 tmux
+
 https://github.com/tmux/tmux
 
 nvim
