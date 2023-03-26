@@ -5,3 +5,4 @@ services:
     build: ./docker
     volumes:
       - ./:/home/user/dotfiles
+      - "~/.ssh/id_rsa:/home/user/.ssh/id_rsa"
