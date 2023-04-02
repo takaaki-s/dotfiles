@@ -1,9 +1,10 @@
 return {
-    {
-      "catppuccin/nvim",
-      as = "catppuccin",
-      config = function()
-        require("catppuccin").setup {}
-      end,
-    },
+  {
+    "navarasu/onedark.nvim",
+    config = function()
+      require("onedark").setup({
+        style = "darker",
+      })
+    end,
+  },
 }

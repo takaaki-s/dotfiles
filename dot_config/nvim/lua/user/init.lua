@@ -1,5 +1,5 @@
 return {
-  colorscheme = "catppuccin",
+  colorscheme = "onedark",
 
   options = {
     g = {
