@@ -17,6 +17,9 @@ return {
 	colorscheme = "onedark",
 
 	options = {
+		opt = {
+			relativenumber = false,
+		},
 		g = {
 			icons_enabled = false,
 		},
