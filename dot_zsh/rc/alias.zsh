@@ -1,26 +1,20 @@
-abbr -S --quiet ll="exa -lg --time-style long-iso"
-abbr -S --quiet la="exa -lag --time-style long-iso"
-abbr -S --quiet lt="exa -l -T"
-
-abbr -S --quiet g="git"
-abbr -S --quiet gb="git branch"
-abbr -S --quiet gs="git status"
-abbr -S --quiet gf="git fetch"
-abbr -S --quiet gc="git checkout"
-abbr -S --quiet gl="git log"
-abbr -S --quiet glg="git log --graph"
-abbr -S --quiet gr="git rebase"
-abbr -S --quiet gwl="git worktree list"
-
-abbr -S --quiet tfp="terraform plan"
-abbr -S --quiet tff="terraform fmt"
-abbr -S --quiet tfi="terraform init"
-abbr -S --quiet tfa="terraform apply"
-
-abbr -S --quiet bi="bundle install --path vendor/bundle -j4"
-abbr -S --quiet rc="bundle ex rails c"
-
-#マージ済みのブランチを削除する
-abbr -S --quiet gmdelete="git branch --merged|egrep -v \"\*|develop|master\"|xargs git branch -d"
-
-abbr -S --quiet k="kubectl"
+abbr ll="exa -lg --time-style long-iso"\ -S --quiet
+abbr la="exa -lag --time-style long-iso"\ -S --quiet
+abbr lt="exa -l -T"\ -S --quiet
+abbr g="git"\ -S --quiet
+abbr gb="git branch"\ -S --quiet
+abbr gs="git status"\ -S --quiet
+abbr gf="git fetch"\ -S --quiet
+abbr gc="git checkout"\ -S --quiet
+abbr gl="git log"\ -S --quiet
+abbr glg="git log --graph"\ -S --quiet
+abbr gr="git rebase"\ -S --quiet
+abbr gwl="git worktree list"\ -S --quiet
+abbr tfp="terraform plan"\ -S --quiet
+abbr tff="terraform fmt"\ -S --quiet
+abbr tfi="terraform init"\ -S --quiet
+abbr tfa="terraform apply"\ -S --quiet
+abbr bi="bundle install --path vendor/bundle -j4"\ -S --quiet
+abbr rc="bundle ex rails c"\ -S --quiet
+abbr gmdelete="git branch --merged|egrep -v \"\*|develop|master\"|xargs git branch -d"\ -S --quiet
+abbr k="kubectl"\ -S --quiet
