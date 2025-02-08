@@ -17,9 +17,6 @@ shell = "zsh"
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
 
-[plugins.asdf]
-github = "asdf-vm/asdf"
-
 [plugins.powerlevel10k]
 github = "romkatv/powerlevel10k"
 
@@ -41,6 +38,13 @@ github = "rupa/z"
 
 [plugins.zsh-abbr]
 github = "olets/zsh-abbr"
+
+[plugins.zsh-mise]
+github = "wintermi/zsh-mise"
+
+#[plugins.zsh-chezmoi]
+#github = "mass8326/zsh-chezmoi"
+
 
 # For example:
 #
