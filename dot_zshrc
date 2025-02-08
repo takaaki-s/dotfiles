@@ -36,3 +36,11 @@ source $HOME/.zsh/rc/function.zsh
 source <(mise completion zsh)
 
 [ -f "$(which fzf)" ] && source <(fzf --zsh)
+
+if [ -f "$(which aws_completer)" ]; then
+  autoload bashcompinit && bashcompinit
+  autoload -Uz compinit && compinit
+
+  complete -C 'aws_completer' aws
+fi
+
