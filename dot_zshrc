@@ -7,7 +7,7 @@ fi
 
 export PATH="$HOME/.local/bin:$PATH"
 eval "$(sheldon source)"
-fpath=(.local/share/sheldon/completion/ $fpath)
+source <(sheldon completions --shell zsh)
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*:default' menu select=1
@@ -29,10 +29,10 @@ source $HOME/.zsh/rc/function.zsh
 
 [ -f ~/.zsh_local ] && source ~/.zsh_local
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.local/bin/mise ] && eval "$(~/.local/bin/mise activate zsh)"
+source <(mise completion zsh)
 
+[ -f "$(which fzf)" ] && source <(fzf --zsh)
