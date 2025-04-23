@@ -27,13 +27,13 @@ source $HOME/.zsh/rc/alias.zsh
 source $HOME/.zsh/rc/config.zsh
 source $HOME/.zsh/rc/function.zsh
 
-[ -f ~/.zsh_local ] && source ~/.zsh_local
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.local/bin/mise ] && eval "$(~/.local/bin/mise activate zsh)"
 source <(mise completion zsh)
+
+[ -f ~/.zsh_local ] && source ~/.zsh_local
 
 [ -f "$(which fzf)" ] && source <(fzf --zsh)
 
