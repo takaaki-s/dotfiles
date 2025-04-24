@@ -6,6 +6,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export PATH="$HOME/.local/bin:$PATH"
+
+autoload -Uz compinit
+compinit
+
 eval "$(sheldon source)"
 source <(sheldon completions --shell zsh)
 
