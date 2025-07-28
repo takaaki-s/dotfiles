@@ -3,8 +3,9 @@
 curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
 
 git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
-
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+rm -rf ~/.config/nvim/.git
 
 curl https://mise.run | sh
+
+~/.local/bin/mise trust ~/.mise.toml
 

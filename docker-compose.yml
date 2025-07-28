@@ -1,8 +1,7 @@
-version: '3'
+version: "3"
 
 services:
   ubuntu:
     build: ./docker
     volumes:
-      - ./:/home/user/dotfiles
-      - "~/.ssh/id_rsa:/home/user/.ssh/id_rsa"
+      - ./:/home/user/.local/share/chezmoi
