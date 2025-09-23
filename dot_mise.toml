@@ -13,3 +13,5 @@ node = "latest"
 ripgrep = "latest"
 tmux = "3.5a"
 usage = "latest"
+uv = "latest"
+
