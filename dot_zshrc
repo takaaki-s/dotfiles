@@ -35,6 +35,7 @@ source $HOME/.zsh/rc/function.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.local/bin/mise ] && eval "$(~/.local/bin/mise activate zsh)"
+[ -f ~/.local/bin/mise ] && eval "$(~/.local/bin/mise activate --shims)"
 source <(mise completion zsh)
 
 [ -f ~/.zsh_local ] && source ~/.zsh_local
