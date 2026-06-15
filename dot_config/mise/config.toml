@@ -1,20 +1,35 @@
 [tools]
-awscli = "latest"
+awscli = { version = "latest", symlink_bins = "true" }
+gh = "latest"
+gitleaks = "latest"
+go = "1.26.0"
+golangci-lint = "latest"
+mutagen = "latest"
+node = "24.15.0"
+peco = "latest"
+pnpm = "10.16.1"
+ruby = "3.3.9"
+saml2aws = "latest"
+tree-sitter = "latest"
+uv = "latest"
 bat = "latest"
-chezmoi = "latest"
 delta = "latest"
 direnv = "latest"
 eza = "latest"
 fd = "latest"
 fzf = "latest"
-go = "latest"
-neovim = "0.11.7"
-node = "latest"
+neovim = "latest"
 ripgrep = "latest"
-tmux = "3.6a"
+tmux = "3.5a"
 usage = "latest"
-uv = "latest"
-jq = "latest"
-gh = "latest"
-make = "latest"
+
+[settings]
+paranoid = true
+minimum_release_age = "7d"
+idiomatic_version_file_enable_tools = ["ruby","node"]
+trusted_config_paths = [
+  "~/dev",
+  "~/.codex/worktrees",
+  "~/.claude/worktrees"
+]
 
