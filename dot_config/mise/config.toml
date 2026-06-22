@@ -5,7 +5,7 @@ gitleaks = "latest"
 go = "1.26.0"
 golangci-lint = "latest"
 mutagen = "latest"
-node = "24.15.0"
+node = "25.8.2"
 peco = "latest"
 pnpm = "10.16.1"
 ruby = "3.3.9"
@@ -20,8 +20,12 @@ fd = "latest"
 fzf = "latest"
 neovim = "latest"
 ripgrep = "latest"
-tmux = "3.5a"
+tmux = "3.6a"
 usage = "latest"
+jq = "1.8.1"
+lazygit = "0.62.2"
+make = "4.4.1"
+chezmoi = "latest"
 
 [settings]
 paranoid = true
@@ -32,4 +36,7 @@ trusted_config_paths = [
   "~/.codex/worktrees",
   "~/.claude/worktrees"
 ]
+
+[settings.ruby]
+compile = false
 
