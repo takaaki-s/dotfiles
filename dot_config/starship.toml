@@ -1,0 +1,169 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Lean minimal prompt (Tokyo Night palette).
+#
+# 端末幅に依存する要素を使わない:
+#   - $fill なし / right_format なし  → 右端との距離を計算しない
+#   - directory を文字数で切らない     → 幅が変わっても表示が変わらない
+# 狭い pane では端末が折り返すだけで、構造は変わらない。
+#
+# 空白と区切りは「各要素が自分の左に持つ」。要素が消えても空白が余らない。
+#
+# フォントは Nerd Font ではないので、記号は ASCII と、旧 powerlevel10k 構成が
+# 実際に描画できていた Unicode (❯ ⇡ ⇣ * ~ + ! ?) だけに限っている。
+
+add_newline = true
+
+format = """
+$custom\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$direnv\
+$golang\
+$nodejs\
+$python\
+$rust\
+$ruby\
+$java\
+$php\
+$kubernetes\
+$terraform\
+$aws\
+$gcloud\
+$cmd_duration\
+$line_break\
+$time\
+$character"""
+
+# --- 1 行目 ------------------------------------------------------------------
+
+[custom.root]
+description = "root で作業しているときだけ警告を出す"
+when = 'test "$(id -u)" = "0"'
+format = "[ROOT](bold #f7768e) "
+
+[directory]
+style = "bold #7aa2f7"
+truncation_length = 0
+truncate_to_repo = false
+read_only = " ro"
+read_only_style = "#f7768e"
+format = "[$path]($style)[$read_only]($read_only_style)"
+
+[git_branch]
+symbol = ""
+style = "#bb9af7"
+format = "[ $branch]($style)"
+
+[git_state]
+style = "#f7768e"
+format = "[ $state( $progress_current/$progress_total)]($style)"
+
+# 記号は旧 powerlevel10k の git formatter に合わせてある。
+[git_status]
+style = "#e0af68"
+format = "([$ahead_behind$stashed$conflicted$staged$deleted$renamed$modified$untracked]($style))"
+ahead = " ⇡${count}"
+behind = " ⇣${count}"
+diverged = " ⇣${behind_count}⇡${ahead_count}"
+stashed = " *${count}"
+conflicted = " ~${count}"
+staged = " +${count}"
+renamed = " +${count}"
+modified = " !${count}"
+deleted = " !${count}"
+untracked = " ?${count}"
+
+[direnv]
+disabled = false
+symbol = "direnv "
+style = "#e0af68"
+format = "[ $symbol$loaded/$allowed]($style)"
+
+[golang]
+version_format = "${raw}"
+symbol = "go "
+style = "#9ece6a"
+format = "[ $symbol$version]($style)"
+
+[nodejs]
+version_format = "${raw}"
+symbol = "node "
+style = "#9ece6a"
+format = "[ $symbol$version]($style)"
+
+[python]
+version_format = "${raw}"
+symbol = "py "
+style = "#9ece6a"
+format = "[ $symbol$pyenv_prefix$version( \\($virtualenv\\))]($style)"
+
+[rust]
+version_format = "${raw}"
+symbol = "rs "
+style = "#9ece6a"
+format = "[ $symbol$version]($style)"
+
+[ruby]
+version_format = "${raw}"
+symbol = "rb "
+style = "#9ece6a"
+format = "[ $symbol$version]($style)"
+
+[java]
+version_format = "${raw}"
+symbol = "java "
+style = "#9ece6a"
+format = "[ $symbol$version]($style)"
+
+[php]
+version_format = "${raw}"
+symbol = "php "
+style = "#9ece6a"
+format = "[ $symbol$version]($style)"
+
+[kubernetes]
+disabled = false
+symbol = "k8s "
+style = "#7dcfff"
+format = "[ $symbol$context( \\($namespace\\))]($style)"
+
+[terraform]
+symbol = "tf "
+style = "#bb9af7"
+format = "[ $symbol$workspace]($style)"
+
+[aws]
+symbol = "aws "
+style = "#ff9e64"
+format = "[ $symbol$profile( \\($region\\))]($style)"
+
+[gcloud]
+symbol = "gcp "
+style = "#7dcfff"
+format = "[ $symbol$account(@$domain)( \\($region\\))]($style)"
+
+[cmd_duration]
+min_time = 2000
+show_milliseconds = false
+style = "#e0af68"
+format = "[ $duration]($style)"
+
+# --- 2 行目 ------------------------------------------------------------------
+
+[time]
+disabled = false
+time_format = "%H:%M:%S"
+style = "#565f89"
+format = "[$time]($style) "
+
+[character]
+format = "$symbol "
+success_symbol = "[❯](bold #9ece6a)"
+error_symbol = "[❯](bold #f7768e)"
+vimcmd_symbol = "[❮](bold #9ece6a)"
+vimcmd_visual_symbol = "[V](bold #9ece6a)"
+vimcmd_replace_symbol = "[▶](bold #9ece6a)"
+vimcmd_replace_one_symbol = "[▶](bold #9ece6a)"
